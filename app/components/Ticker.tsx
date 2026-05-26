@@ -4,7 +4,7 @@ export default function Ticker() {
     <div style={{ background: "linear-gradient(90deg, var(--deep), var(--sky), var(--deep))", padding: ".75rem 0", overflow: "hidden" }}>
       <div style={{ display: "flex", whiteSpace: "nowrap", animation: "ticker 20s linear infinite", gap: "2.5rem" }}>
         {[...items,...items].map((item, i) => (
-          <span key={i} style={{ color: "rgba(255,255,255,.85)", fontSize: ".82rem", fontWeight: 600, letterSpacing: ".06em" }}>
+          <span key={i} style={{ color: "rgba(255,255,255,.9)", fontSize: ".82rem", fontWeight: 600, letterSpacing: ".06em" }}>
             {item} <span style={{ color: "rgba(255,255,255,.3)", marginLeft: ".5rem" }}>·</span>
           </span>
         ))}

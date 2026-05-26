@@ -7,7 +7,7 @@ export default function Proses() {
   ];
 
   return (
-    <section id="proses" style={{ background: "var(--ink2)", padding: "7rem 5%", position: "relative", overflow: "hidden" }}>
+    <section id="proses" style={{ background: "#F8FAFC", padding: "7rem 5%", position: "relative", overflow: "hidden" }}>
       {/* BG accent */}
       <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 800, height: 800, background: "radial-gradient(circle, rgba(14,165,233,.04) 0%, transparent 65%)", pointerEvents: "none" }} />
 
@@ -19,33 +19,36 @@ export default function Proses() {
             Proses Kami
             <span style={{ width: 20, height: 1, background: "var(--sky)", display: "inline-block" }} />
           </div>
-          <h2 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 900, fontSize: "clamp(2rem,4.5vw,3.5rem)", letterSpacing: "-.04em", marginBottom: ".75rem" }}>
+          <h2 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 900, fontSize: "clamp(2rem,4.5vw,3.5rem)", letterSpacing: "-.04em", marginBottom: ".75rem", color: "#0F172A" }}>
             Dari Sumber ke Galon<br />
-            <span style={{ background: "linear-gradient(135deg, var(--sky2), var(--sky))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Tanpa Kompromi</span>
+            <span style={{ background: "linear-gradient(135deg, var(--sky), var(--deep))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Tanpa Kompromi</span>
           </h2>
-          <p style={{ color: "rgba(240,249,255,.45)", fontSize: "1rem", maxWidth: 480, margin: "0 auto", lineHeight: 1.75 }}>
+          <p style={{ color: "rgba(15,23,42,.5)", fontSize: "1rem", maxWidth: 480, margin: "0 auto", lineHeight: 1.75 }}>
             Setiap tetes yang masuk ke galon Anda telah melewati proses ketat yang kami jaga setiap hari.
           </p>
         </div>
 
         {/* Steps */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1px", background: "var(--border)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1.5rem" }}>
           {steps.map((s, i) => (
             <div key={s.n} className="reveal" style={{
-              background: "var(--ink2)", padding: "2.5rem 2rem",
-              transition: "background .3s", position: "relative", overflow: "hidden",
+              background: "#FFFFFF", borderRadius: 20,
+              border: "1px solid rgba(14,165,233,.1)",
+              padding: "2.5rem 2rem",
+              transition: "all .3s", position: "relative", overflow: "hidden",
+              boxShadow: "0 2px 12px rgba(14,165,233,.06)",
             }}
-              onMouseEnter={e => (e.currentTarget.style.background = "var(--ink3)")}
-              onMouseLeave={e => (e.currentTarget.style.background = "var(--ink2)")}
+              onMouseEnter={e => { (e.currentTarget.style.boxShadow = "0 12px 40px rgba(14,165,233,.12)"); (e.currentTarget.style.transform = "translateY(-4px)"); (e.currentTarget.style.borderColor = "rgba(14,165,233,.2)"); }}
+              onMouseLeave={e => { (e.currentTarget.style.boxShadow = "0 2px 12px rgba(14,165,233,.06)"); (e.currentTarget.style.transform = "none"); (e.currentTarget.style.borderColor = "rgba(14,165,233,.1)"); }}
             >
               {/* Step number watermark */}
               <div style={{ position: "absolute", top: "1rem", right: "1rem", fontFamily: "Outfit, sans-serif", fontWeight: 900, fontSize: "5rem", color: "rgba(14,165,233,.06)", letterSpacing: "-.05em", lineHeight: 1 }}>{s.n}</div>
               {/* Icon circle */}
-              <div style={{ width: 56, height: 56, borderRadius: "50%", background: "rgba(14,165,233,.1)", border: "1px solid rgba(14,165,233,.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.6rem", marginBottom: "1.5rem" }}>{s.icon}</div>
-              <h3 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 800, fontSize: "1.1rem", marginBottom: ".65rem", letterSpacing: "-.02em" }}>{s.title}</h3>
-              <p style={{ color: "rgba(240,249,255,.45)", fontSize: ".875rem", lineHeight: 1.75 }}>{s.desc}</p>
-              {/* Connector arrow */}
-              {i < 3 && <div style={{ position: "absolute", top: "50%", right: -10, transform: "translateY(-50%)", color: "var(--sky)", fontSize: ".8rem", zIndex: 2 }}>▶</div>}
+              <div style={{ width: 56, height: 56, borderRadius: "50%", background: "rgba(14,165,233,.08)", border: "1px solid rgba(14,165,233,.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.6rem", marginBottom: "1.5rem" }}>{s.icon}</div>
+              <h3 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 800, fontSize: "1.1rem", marginBottom: ".65rem", letterSpacing: "-.02em", color: "#0F172A" }}>{s.title}</h3>
+              <p style={{ color: "rgba(15,23,42,.5)", fontSize: ".875rem", lineHeight: 1.75 }}>{s.desc}</p>
+              {/* Step number badge */}
+              {i < 3 && <div style={{ position: "absolute", top: "50%", right: -16, transform: "translateY(-50%)", color: "var(--sky)", fontSize: ".8rem", zIndex: 2, opacity: .5 }}>▶</div>}
             </div>
           ))}
         </div>

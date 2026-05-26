@@ -25,13 +25,13 @@ export default function Navbar() {
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 200,
         padding: "1rem 5%", display: "flex", alignItems: "center", justifyContent: "space-between",
         transition: "all .4s",
-        background: scrolled ? "rgba(10,22,40,0.97)" : "transparent",
-        borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
+        background: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
+        borderBottom: scrolled ? "1px solid rgba(14,165,233,0.12)" : "1px solid transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
+        boxShadow: scrolled ? "0 2px 20px rgba(14,165,233,0.08)" : "none",
       }}>
         {/* Logo */}
         <div onClick={() => go("#home")} style={{ display: "flex", alignItems: "center", gap: ".6rem", cursor: "pointer" }}>
-          {/* Drop icon */}
           <div style={{ width: 36, height: 36, position: "relative" }}>
             <svg viewBox="0 0 36 36" fill="none" width="36" height="36">
               <path d="M18 4 C18 4 8 16 8 22 a10 10 0 0 0 20 0 C28 16 18 4 18 4Z" fill="url(#dg)" />
@@ -44,10 +44,10 @@ export default function Navbar() {
             </svg>
           </div>
           <div>
-            <span style={{ fontFamily: "Outfit, sans-serif", fontWeight: 800, fontSize: "1.2rem", color: "var(--white)", letterSpacing: "-.03em" }}>
+            <span style={{ fontFamily: "Outfit, sans-serif", fontWeight: 800, fontSize: "1.2rem", color: "#0F172A", letterSpacing: "-.03em" }}>
               mitra<span style={{ color: "var(--sky)" }}>qua</span>
             </span>
-            <div style={{ fontSize: ".6rem", color: "rgba(240,249,255,.35)", letterSpacing: ".15em", textTransform: "uppercase", marginTop: "-2px" }}>Air Galon Isi Ulang</div>
+            <div style={{ fontSize: ".6rem", color: "rgba(15,23,42,.35)", letterSpacing: ".15em", textTransform: "uppercase", marginTop: "-2px" }}>Air Galon Isi Ulang</div>
           </div>
         </div>
 
@@ -57,11 +57,11 @@ export default function Navbar() {
             <li key={l.href}>
               <button onClick={() => go(l.href)} style={{
                 background: "none", border: "none", cursor: "pointer",
-                color: "rgba(240,249,255,.45)", fontSize: ".85rem", fontWeight: 500,
+                color: "rgba(15,23,42,.5)", fontSize: ".85rem", fontWeight: 500,
                 fontFamily: "Outfit, sans-serif", transition: "color .2s", padding: 0,
               }}
-                onMouseEnter={e => (e.currentTarget.style.color = "var(--sky2)")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(240,249,255,.45)")}
+                onMouseEnter={e => (e.currentTarget.style.color = "var(--sky)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(15,23,42,.5)")}
               >{l.label}</button>
             </li>
           ))}
@@ -79,25 +79,26 @@ export default function Navbar() {
         >Pesan Sekarang 💧</button>
 
         <button onClick={() => setOpen(!open)} className="show-mob" style={{
-          background: "none", border: "1px solid var(--border2)", cursor: "pointer",
+          background: "none", border: "1px solid rgba(14,165,233,.2)", cursor: "pointer",
           borderRadius: 8, padding: "8px", display: "flex", flexDirection: "column", gap: 4,
         }}>
           {[0,1,2].map(i => <span key={i} style={{ width: 20, height: 1.5, background: "var(--sky)", display: "block", borderRadius: 2 }} />)}
         </button>
       </nav>
 
-      {open && <div onClick={() => setOpen(false)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.6)", zIndex: 250, backdropFilter: "blur(4px)" }} />}
+      {open && <div onClick={() => setOpen(false)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.3)", zIndex: 250, backdropFilter: "blur(4px)" }} />}
       <div style={{
         position: "fixed", top: 0, right: 0, bottom: 0, width: "80%", maxWidth: 280,
-        background: "var(--ink2)", zIndex: 300, padding: "5rem 2rem 2rem",
-        borderLeft: "1px solid var(--border)", display: "flex", flexDirection: "column", gap: ".5rem",
+        background: "#FFFFFF", zIndex: 300, padding: "5rem 2rem 2rem",
+        borderLeft: "1px solid rgba(14,165,233,.12)", display: "flex", flexDirection: "column", gap: ".5rem",
         transform: open ? "translateX(0)" : "translateX(100%)", transition: "transform .35s cubic-bezier(.4,0,.2,1)",
+        boxShadow: "-8px 0 32px rgba(14,165,233,.1)",
       }}>
         {links.map(l => (
           <button key={l.href} onClick={() => go(l.href)} style={{
-            background: "none", border: "none", borderBottom: "1px solid var(--border)",
+            background: "none", border: "none", borderBottom: "1px solid rgba(14,165,233,.1)",
             padding: "1rem 0", textAlign: "left", cursor: "pointer",
-            color: "rgba(240,249,255,.7)", fontSize: "1rem", fontWeight: 500, fontFamily: "Outfit, sans-serif",
+            color: "rgba(15,23,42,.7)", fontSize: "1rem", fontWeight: 500, fontFamily: "Outfit, sans-serif",
           }}>{l.label}</button>
         ))}
         <button onClick={() => go("#pesan")} style={{

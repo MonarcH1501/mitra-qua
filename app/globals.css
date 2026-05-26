@@ -2,16 +2,16 @@
 
 :root {
   --sky:    #0EA5E9;
-  --sky2:   #38BDF8;
+  --sky2:   #0284C7;
   --deep:   #0369A1;
-  --ink:    #0A1628;
-  --ink2:   #0F1F35;
-  --ink3:   #162840;
-  --white:  #F0F9FF;
+  --ink:    #FFFFFF;
+  --ink2:   #F8FAFC;
+  --ink3:   #EFF6FF;
+  --white:  #0F172A;
   --muted:  #64748B;
   --border: rgba(14,165,233,0.12);
-  --border2: rgba(14,165,233,0.22);
-  --glass:  rgba(14,165,233,0.06);
+  --border2: rgba(14,165,233,0.28);
+  --glass:  rgba(14,165,233,0.04);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }

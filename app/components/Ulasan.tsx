@@ -8,49 +8,52 @@ export default function Ulasan() {
     { name: "Mas Arif", role: "Anak Kos, Pontianak Utara", init: "MA", text: "Buat anak kos kayak saya, harga Rp 6.000 per galon itu sangat terjangkau. Tidak perlu beli air botolan lagi. Hemat banget di akhir bulan.", rating: 5 },
   ];
   return (
-    <section id="ulasan" style={{ padding: "7rem 5%", maxWidth: 1300, margin: "0 auto" }}>
-      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "4rem", flexWrap: "wrap", gap: "2rem" }}>
-        <div className="reveal">
-          <div style={{ display: "inline-flex", alignItems: "center", gap: ".5rem", color: "var(--sky)", fontSize: ".78rem", fontWeight: 600, letterSpacing: ".15em", textTransform: "uppercase", marginBottom: "1rem" }}>
-            <span style={{ width: 20, height: 1, background: "var(--sky)", display: "inline-block" }} />
-            Ulasan Pelanggan
+    <section id="ulasan" style={{ background: "#F8FAFC", padding: "7rem 5%" }}>
+      <div style={{ maxWidth: 1300, margin: "0 auto" }}>
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "4rem", flexWrap: "wrap", gap: "2rem" }}>
+          <div className="reveal">
+            <div style={{ display: "inline-flex", alignItems: "center", gap: ".5rem", color: "var(--sky)", fontSize: ".78rem", fontWeight: 600, letterSpacing: ".15em", textTransform: "uppercase", marginBottom: "1rem" }}>
+              <span style={{ width: 20, height: 1, background: "var(--sky)", display: "inline-block" }} />
+              Ulasan Pelanggan
+            </div>
+            <h2 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 900, fontSize: "clamp(2rem,4.5vw,3.5rem)", letterSpacing: "-.04em", lineHeight: .95, color: "#0F172A" }}>
+              1.200+ Keluarga<br />
+              <span style={{ background: "linear-gradient(135deg, var(--sky), var(--deep))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Sudah Percaya</span>
+            </h2>
           </div>
-          <h2 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 900, fontSize: "clamp(2rem,4.5vw,3.5rem)", letterSpacing: "-.04em", lineHeight: .95 }}>
-            1.200+ Keluarga<br />
-            <span style={{ background: "linear-gradient(135deg,var(--sky2),var(--sky))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Sudah Percaya</span>
-          </h2>
+          <div className="reveal" style={{ background: "#FFFFFF", border: "1px solid rgba(14,165,233,.12)", borderRadius: 16, padding: "1.5rem 2rem", textAlign: "center", boxShadow: "0 4px 20px rgba(14,165,233,.08)" }}>
+            <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: 900, fontSize: "3.5rem", color: "var(--sky2)", letterSpacing: "-.05em", lineHeight: 1 }}>4.9</div>
+            <div style={{ color: "#FBBF24", fontSize: "1rem", letterSpacing: 2, margin: ".3rem 0" }}>★★★★★</div>
+            <div style={{ color: "var(--muted)", fontSize: ".78rem" }}>dari 1.200+ ulasan</div>
+          </div>
         </div>
-        <div className="reveal" style={{ background: "var(--ink2)", border: "1px solid var(--border)", borderRadius: 16, padding: "1.5rem 2rem", textAlign: "center" }}>
-          <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: 900, fontSize: "3.5rem", color: "var(--sky2)", letterSpacing: "-.05em", lineHeight: 1 }}>4.9</div>
-          <div style={{ color: "#FBBF24", fontSize: "1rem", letterSpacing: 2, margin: ".3rem 0" }}>★★★★★</div>
-          <div style={{ color: "var(--muted)", fontSize: ".78rem" }}>dari 1.200+ ulasan</div>
-        </div>
-      </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.25rem" }}>
-        {reviews.map((r) => (
-          <div key={r.name} className="reveal" style={{
-            background: "var(--ink2)", border: "1px solid var(--border)",
-            borderRadius: 16, padding: "1.75rem", transition: "all .3s",
-          }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--border2)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--border)"; (e.currentTarget as HTMLElement).style.transform = "none"; }}
-          >
-            <div style={{ color: "#FBBF24", fontSize: ".9rem", letterSpacing: 2, marginBottom: ".85rem" }}>{"★".repeat(r.rating)}</div>
-            <p style={{ color: "rgba(240,249,255,.6)", fontSize: ".875rem", lineHeight: 1.8, marginBottom: "1.5rem", fontStyle: "italic" }}>"{r.text}"</p>
-            <div style={{ display: "flex", alignItems: "center", gap: ".65rem", borderTop: "1px solid var(--border)", paddingTop: "1.25rem" }}>
-              <div style={{ width: 38, height: 38, borderRadius: "50%", background: "linear-gradient(135deg, var(--sky), var(--deep))", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: ".82rem" }}>{r.init}</div>
-              <div>
-                <div style={{ fontWeight: 700, fontSize: ".875rem" }}>{r.name}</div>
-                <div style={{ color: "var(--muted)", fontSize: ".75rem", marginTop: ".1rem" }}>{r.role}</div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.25rem" }}>
+          {reviews.map((r) => (
+            <div key={r.name} className="reveal" style={{
+              background: "#FFFFFF", border: "1px solid rgba(14,165,233,.1)",
+              borderRadius: 16, padding: "1.75rem", transition: "all .3s",
+              boxShadow: "0 2px 8px rgba(14,165,233,.05)",
+            }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(14,165,233,.22)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 36px rgba(14,165,233,.1)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(14,165,233,.1)"; (e.currentTarget as HTMLElement).style.transform = "none"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 8px rgba(14,165,233,.05)"; }}
+            >
+              <div style={{ color: "#FBBF24", fontSize: ".9rem", letterSpacing: 2, marginBottom: ".85rem" }}>{"★".repeat(r.rating)}</div>
+              <p style={{ color: "rgba(15,23,42,.6)", fontSize: ".875rem", lineHeight: 1.8, marginBottom: "1.5rem", fontStyle: "italic" }}>"{r.text}"</p>
+              <div style={{ display: "flex", alignItems: "center", gap: ".65rem", borderTop: "1px solid rgba(14,165,233,.08)", paddingTop: "1.25rem" }}>
+                <div style={{ width: 38, height: 38, borderRadius: "50%", background: "linear-gradient(135deg, var(--sky), var(--deep))", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: ".82rem", color: "#fff" }}>{r.init}</div>
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: ".875rem", color: "#0F172A" }}>{r.name}</div>
+                  <div style={{ color: "var(--muted)", fontSize: ".75rem", marginTop: ".1rem" }}>{r.role}</div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <style>{`
-        @media(max-width:900px){ #ulasan > div:last-child{grid-template-columns:1fr 1fr!important} }
-        @media(max-width:500px){ #ulasan > div:last-child{grid-template-columns:1fr!important} }
+        @media(max-width:900px){ #ulasan > div > div:last-child{grid-template-columns:1fr 1fr!important} }
+        @media(max-width:500px){ #ulasan > div > div:last-child{grid-template-columns:1fr!important} }
       `}</style>
     </section>
   );

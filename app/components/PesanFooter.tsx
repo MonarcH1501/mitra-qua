@@ -15,15 +15,15 @@ export function Pesan() {
   };
 
   const inp: React.CSSProperties = {
-    width: "100%", background: "rgba(14,165,233,.05)",
-    border: "1px solid var(--border2)", color: "var(--white)",
+    width: "100%", background: "rgba(14,165,233,.04)",
+    border: "1px solid rgba(14,165,233,.2)", color: "#0F172A",
     padding: ".85rem 1.1rem", borderRadius: 12,
     fontFamily: "Outfit, sans-serif", fontSize: ".9rem", outline: "none",
     transition: "border-color .2s, background .2s",
   };
 
   return (
-    <section id="pesan" style={{ background: "var(--ink2)", borderTop: "1px solid var(--border)", padding: "7rem 5%", position: "relative", overflow: "hidden" }}>
+    <section id="pesan" style={{ background: "#F8FAFC", borderTop: "1px solid rgba(14,165,233,.1)", padding: "7rem 5%", position: "relative", overflow: "hidden" }}>
       {/* BG glow */}
       <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 900, height: 600, background: "radial-gradient(ellipse, rgba(14,165,233,.06) 0%, transparent 65%)", pointerEvents: "none" }} />
 
@@ -40,7 +40,7 @@ export function Pesan() {
             <span style={{ background: "linear-gradient(135deg,var(--sky2),var(--sky))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Langsung ke</span><br />
             Rumah Anda
           </h2>
-          <p style={{ color: "rgba(240,249,255,.45)", fontSize: ".95rem", lineHeight: 1.85, marginBottom: "2.5rem" }}>
+          <p style={{ color: "rgba(15,23,42,.5)", fontSize: ".95rem", lineHeight: 1.85, marginBottom: "2.5rem" }}>
             Isi form di samping atau langsung chat WhatsApp kami. Pesanan diproses dalam hitungan menit, antar hari yang sama untuk area Pontianak.
           </p>
 
@@ -75,8 +75,8 @@ export function Pesan() {
         </div>
 
         {/* Form */}
-        <div className="reveal" style={{ background: "var(--ink)", border: "1px solid var(--border)", borderRadius: 24, padding: "2.5rem", boxShadow: "0 20px 60px rgba(0,0,0,.3)" }}>
-          <h3 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 800, fontSize: "1.3rem", letterSpacing: "-.03em", marginBottom: ".4rem" }}>Form Pemesanan</h3>
+        <div className="reveal" style={{ background: "#FFFFFF", border: "1px solid rgba(14,165,233,.12)", borderRadius: 24, padding: "2.5rem", boxShadow: "0 8px 40px rgba(14,165,233,.1)" }}>
+          <h3 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 800, fontSize: "1.3rem", letterSpacing: "-.03em", marginBottom: ".4rem", color: "#0F172A" }}>Form Pemesanan</h3>
           <p style={{ color: "var(--muted)", fontSize: ".82rem", marginBottom: "2rem" }}>Isi data Anda — kami konfirmasi via WhatsApp</p>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
@@ -163,9 +163,9 @@ export function Pesan() {
 export function Footer() {
   const go = (href: string) => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   return (
-    <footer style={{ borderTop: "1px solid var(--border)", background: "var(--ink)", padding: "4rem 5% 2rem" }}>
+    <footer style={{ borderTop: "1px solid rgba(14,165,233,.1)", background: "#F8FAFC", padding: "4rem 5% 2rem" }}>
       <div style={{ maxWidth: 1300, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "4rem", paddingBottom: "3rem", borderBottom: "1px solid var(--border)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "4rem", paddingBottom: "3rem", borderBottom: "1px solid rgba(14,165,233,.1)" }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: ".6rem", marginBottom: "1.25rem" }}>
               <svg viewBox="0 0 36 36" fill="none" width="32" height="32">
@@ -176,7 +176,7 @@ export function Footer() {
                 mitra<span style={{ color: "var(--sky)" }}>qua</span>
               </span>
             </div>
-            <p style={{ color: "var(--muted)", fontSize: ".875rem", lineHeight: 1.8, maxWidth: 300, marginBottom: "1.5rem" }}>
+            <p style={{ color: "rgba(15,23,42,.5)", fontSize: ".875rem", lineHeight: 1.8, maxWidth: 300, marginBottom: "1.5rem" }}>
               Depot air galon isi ulang terpercaya di Pontianak. Air bersih, harga hemat, untuk kesehatan keluarga Anda setiap hari.
             </p>
             <a href="https://wa.me/6281234567892" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: ".5rem", background: "#25D366", color: "#fff", padding: ".55rem 1.25rem", borderRadius: 100, fontSize: ".82rem", fontWeight: 700, textDecoration: "none" }}>
@@ -188,13 +188,13 @@ export function Footer() {
             { title: "Informasi", links: [["#harga","Satuan Rp 6.000"],["#harga","Paket 10 Galon"],["#harga","Langganan Bulanan"],["#pesan","Antar ke Rumah"],["#pesan","Area Pengiriman"]] },
           ].map(col => (
             <div key={col.title}>
-              <h4 style={{ fontSize: ".72rem", fontWeight: 600, letterSpacing: ".12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1.25rem" }}>{col.title}</h4>
+              <h4 style={{ fontSize: ".72rem", fontWeight: 600, letterSpacing: ".12em", textTransform: "uppercase", color: "rgba(15,23,42,.4)", marginBottom: "1.25rem" }}>{col.title}</h4>
               <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: ".6rem" }}>
                 {col.links.map(([href, label]) => (
                   <li key={label}>
-                    <button onClick={() => go(href)} style={{ background: "none", border: "none", color: "rgba(240,249,255,.35)", fontSize: ".875rem", cursor: "pointer", fontFamily: "Outfit, sans-serif", padding: 0, transition: "color .2s" }}
+                    <button onClick={() => go(href)} style={{ background: "none", border: "none", color: "rgba(15,23,42,.4)", fontSize: ".875rem", cursor: "pointer", fontFamily: "Outfit, sans-serif", padding: 0, transition: "color .2s" }}
                       onMouseEnter={e => (e.currentTarget.style.color = "var(--sky2)")}
-                      onMouseLeave={e => (e.currentTarget.style.color = "rgba(240,249,255,.35)")}
+                      onMouseLeave={e => (e.currentTarget.style.color = "rgba(15,23,42,.4)")}
                     >{label}</button>
                   </li>
                 ))}
@@ -203,7 +203,7 @@ export function Footer() {
           ))}
         </div>
         <div style={{ paddingTop: "2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
-          <p style={{ color: "var(--muted)", fontSize: ".8rem" }}>© 2025 Mitra Qua. Pontianak, Kalimantan Barat.</p>
+          <p style={{ color: "rgba(15,23,42,.45)", fontSize: ".8rem" }}>© 2025 Mitra Qua. Pontianak, Kalimantan Barat.</p>
           <div style={{ display: "flex", gap: ".5rem" }}>
             {["IG","FB","WA"].map(s => (
               <a key={s} href="#" style={{ width: 34, height: 34, borderRadius: 8, border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--muted)", fontSize: ".72rem", fontWeight: 700, textDecoration: "none", transition: "all .2s" }}
