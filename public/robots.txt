@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mitra-qua.vercel.app/sitemap.xml
