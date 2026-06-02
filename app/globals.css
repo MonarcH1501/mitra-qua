@@ -1,33 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --sky:    #0EA5E9;
-  --sky2:   #0284C7;
-  --deep:   #0369A1;
-  --ink:    #FFFFFF;
-  --ink2:   #F8FAFC;
-  --ink3:   #EFF6FF;
-  --white:  #0F172A;
-  --muted:  #64748B;
-  --border: rgba(14,165,233,0.12);
-  --border2: rgba(14,165,233,0.28);
-  --glass:  rgba(14,165,233,0.04);
+  --bg:      #FFFFFF;
+  --bg2:     #F8FAFF;
+  --bg3:     #F0F4FF;
+  --white:   #FFFFFF;
+  --ink:     #0D0C2B;
+  --ink2:    #1C1A45;
+  --text:    #1C1A45;
+  --sub:     #4A4870;
+  --muted:   #9896B8;
+  --border:  rgba(99,88,229,0.09);
+  --border2: rgba(99,88,229,0.18);
+  --shadow:  0 4px 24px rgba(99,88,229,0.08);
+  --shadow2: 0 12px 48px rgba(99,88,229,0.13);
+
+  /* Brand colors */
+  --violet:  #6358E5;
+  --violet2: #8B7FF5;
+  --aqua:    #0ABDE3;
+  --aqua2:   #48CAE4;
+  --rose:    #F43F8A;
+  --emerald: #0CB87A;
+  --amber:   #F5A623;
+
+  /* Gradients */
+  --grad-main:  linear-gradient(135deg, #6358E5 0%, #0ABDE3 100%);
+  --grad-warm:  linear-gradient(135deg, #F43F8A 0%, #F5A623 100%);
+  --grad-cool:  linear-gradient(135deg, #0ABDE3 0%, #0CB87A 100%);
+  --grad-royal: linear-gradient(135deg, #6358E5 0%, #F43F8A 100%);
+  --grad-text:  linear-gradient(135deg, #6358E5, #0ABDE3);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Outfit', sans-serif; background: var(--ink); color: var(--white); overflow-x: hidden; }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
 
-.reveal      { opacity:0; transform:translateY(28px); transition:opacity .75s ease,transform .75s ease; }
-.reveal.up   { opacity:1; transform:none; }
-.fade-in     { opacity:0; transition:opacity .75s ease; }
-.fade-in.up  { opacity:1; }
+.reveal    { opacity:0; transform:translateY(26px); transition:opacity .7s ease,transform .7s ease; }
+.reveal.up { opacity:1; transform:none; }
 
 @keyframes fadeUp  { from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none} }
 @keyframes ticker  { from{transform:translateX(0)}to{transform:translateX(-50%)} }
-@keyframes blob    { 0%,100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%} 50%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%} }
-@keyframes float   { 0%,100%{transform:translateY(0) rotate(-3deg)} 50%{transform:translateY(-16px) rotate(3deg)} }
-@keyframes ripple  { 0%{transform:scale(1);opacity:.6} 100%{transform:scale(2.5);opacity:0} }
-@keyframes spin    { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-@keyframes pulse   { 0%,100%{opacity:1} 50%{opacity:.4} }
-@keyframes dropFall { 0%{transform:translateY(-20px);opacity:0} 60%{opacity:1} 100%{transform:translateY(0);opacity:1} }
+@keyframes float   { 0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)} }
+@keyframes spin    { from{transform:rotate(0deg)}to{transform:rotate(360deg)} }
+@keyframes pulse   { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.95)} }
+@keyframes ripple  { 0%{transform:scale(.7);opacity:.4}100%{transform:scale(2);opacity:0} }
+@keyframes blink   { 0%,100%{opacity:1}50%{opacity:.3} }

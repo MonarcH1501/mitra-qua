@@ -1,142 +1,125 @@
 export default function Hero() {
   return (
-    <section id="home" style={{ minHeight: "100vh", background: "#FFFFFF", position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+    <section id="home" style={{ minHeight: "100vh", background: "var(--bg)", position: "relative", overflow: "hidden", display: "flex", flexDirection: "column" }}>
 
-      {/* Soft blobs background */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
-        <div style={{ position: "absolute", width: 700, height: 700, top: "-20%", right: "-15%", background: "radial-gradient(circle, rgba(14,165,233,.07) 0%, transparent 70%)", animation: "blob 10s ease-in-out infinite" }} />
-        <div style={{ position: "absolute", width: 500, height: 500, bottom: "5%", left: "-8%", background: "radial-gradient(circle, rgba(3,105,161,.06) 0%, transparent 70%)", animation: "blob 14s ease-in-out infinite reverse" }} />
-        <div style={{ position: "absolute", width: 350, height: 350, top: "35%", left: "38%", background: "radial-gradient(circle, rgba(56,189,248,.05) 0%, transparent 70%)", animation: "blob 8s ease-in-out infinite 2s" }} />
-        {/* Subtle grid */}
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(14,165,233,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,.03) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+      {/* Soft gradient orbs — subtle on white */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden", pointerEvents: "none" }}>
+        <div style={{ position: "absolute", width: 700, height: 700, top: "-20%", right: "-15%", background: "radial-gradient(circle, rgba(99,88,229,.07) 0%, transparent 65%)", borderRadius: "50%" }} />
+        <div style={{ position: "absolute", width: 500, height: 500, bottom: "-10%", left: "-10%", background: "radial-gradient(circle, rgba(10,189,227,.07) 0%, transparent 65%)", borderRadius: "50%" }} />
+        <div style={{ position: "absolute", width: 350, height: 350, top: "35%", left: "38%", background: "radial-gradient(circle, rgba(244,63,138,.05) 0%, transparent 65%)", borderRadius: "50%" }} />
+        {/* Very faint dot grid */}
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(rgba(99,88,229,.08) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
       </div>
 
-      <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 5%", width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", gap: "4rem", position: "relative", zIndex: 2, paddingTop: "6rem" }}>
+      <div style={{ flex: 1, maxWidth: 1300, margin: "0 auto", width: "100%", padding: "0 5%", display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", gap: "4rem", position: "relative", zIndex: 2, paddingTop: "7rem" }}>
 
-        {/* Left */}
+        {/* LEFT */}
         <div>
-          {/* Badge */}
-          <div style={{ display: "inline-flex", alignItems: "center", gap: ".6rem", background: "rgba(14,165,233,.08)", border: "1px solid rgba(14,165,233,.18)", borderRadius: 100, padding: ".35rem 1rem .35rem .5rem", marginBottom: "2rem", animation: "fadeUp .6s ease both" }}>
-            <div style={{ background: "var(--sky)", borderRadius: "50%", width: 24, height: 24, display: "flex", alignItems: "center", justifyContent: "center", fontSize: ".7rem" }}>💧</div>
-            <span style={{ color: "var(--sky2)", fontSize: ".78rem", fontWeight: 600, letterSpacing: ".06em" }}>Tersertifikasi & Terjamin Bersih</span>
+          {/* Eyebrow pill */}
+          <div style={{ display: "inline-flex", alignItems: "center", gap: ".6rem", background: "linear-gradient(135deg,rgba(99,88,229,.08),rgba(10,189,227,.08))", border: "1px solid rgba(99,88,229,.15)", borderRadius: 100, padding: ".4rem 1.1rem .4rem .5rem", marginBottom: "2rem", animation: "fadeUp .6s ease both" }}>
+            <div style={{ width: 26, height: 26, borderRadius: "50%", background: "var(--grad-main)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: ".75rem", boxShadow: "0 2px 8px rgba(99,88,229,.3)" }}>💧</div>
+            <span style={{ fontSize: ".78rem", fontWeight: 600, color: "var(--violet)", letterSpacing: ".04em" }}>Tersertifikasi BPOM · Filtrasi 7 Tahap</span>
           </div>
 
           {/* Headline */}
-          <h1 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 900, fontSize: "clamp(3rem,6.5vw,6rem)", lineHeight: .95, letterSpacing: "-.04em", marginBottom: "1.75rem", animation: "fadeUp .6s .1s ease both" }}>
-            <span style={{ display: "block", color: "#0F172A" }}>Air Bersih</span>
-            <span style={{ display: "block", background: "linear-gradient(135deg, var(--sky), var(--deep))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Harga Hemat</span>
-            <span style={{ display: "block", color: "rgba(15,23,42,.2)" }}>Setiap Hari</span>
+          <h1 style={{ fontFamily: "Syne, sans-serif", fontWeight: 900, fontSize: "clamp(2.8rem,5.5vw,5.2rem)", lineHeight: .95, letterSpacing: "-.04em", marginBottom: "1.75rem", animation: "fadeUp .6s .1s ease both" }}>
+            <span style={{ display: "block", color: "var(--ink)" }}>Air Bersih</span>
+            <span style={{ display: "block", background: "var(--grad-main)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Sehat & Hemat</span>
+            <span style={{ display: "block", color: "var(--muted)", fontWeight: 700, fontSize: "80%" }}>untuk Keluarga</span>
           </h1>
 
-          <p style={{ color: "rgba(15,23,42,.55)", fontSize: "1.05rem", lineHeight: 1.8, maxWidth: 420, marginBottom: "2.5rem", animation: "fadeUp .6s .2s ease both" }}>
-            Isi ulang galon 20 liter cukup <strong style={{ color: "var(--sky2)", fontWeight: 700 }}>Rp 6.000</strong> saja. Air minum sehat untuk keluarga Anda dengan proses filtrasi 7 tahap yang higienis dan modern.
+          <p style={{ color: "var(--sub)", fontSize: "1.05rem", lineHeight: 1.8, maxWidth: 430, marginBottom: "2.5rem", animation: "fadeUp .6s .2s ease both" }}>
+            Isi ulang galon 20 liter cukup <strong style={{ color: "var(--violet)", fontWeight: 800 }}>Rp 6.000</strong> saja. Diproses dengan teknologi filtrasi modern — murni, segar, dan aman untuk diminum langsung.
           </p>
 
-          {/* CTA */}
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", animation: "fadeUp .6s .3s ease both" }}>
-            <a href="#pesan" style={{
-              background: "linear-gradient(135deg, var(--sky), var(--deep))",
-              color: "#fff", padding: "1rem 2rem", borderRadius: 100,
-              fontWeight: 700, textDecoration: "none", fontSize: "1rem",
-              boxShadow: "0 8px 30px rgba(14,165,233,.35)", transition: "all .25s",
-              display: "flex", alignItems: "center", gap: ".5rem",
-            }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 40px rgba(14,165,233,.5)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 30px rgba(14,165,233,.35)"; }}
+          {/* CTA Row */}
+          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "3rem", animation: "fadeUp .6s .3s ease both" }}>
+            <a href="#pesan" style={{ background: "var(--grad-main)", color: "#fff", padding: "1rem 2rem", borderRadius: 100, fontWeight: 700, textDecoration: "none", fontSize: ".95rem", boxShadow: "0 8px 28px rgba(99,88,229,.3)", transition: "all .25s", display: "inline-flex", alignItems: "center", gap: ".4rem" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 14px 36px rgba(99,88,229,.42)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "none"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 28px rgba(99,88,229,.3)"; }}
             >Pesan Sekarang 💧</a>
-            <a href="#proses" style={{
-              color: "rgba(15,23,42,.55)", border: "1px solid rgba(14,165,233,.22)",
-              padding: "1rem 2rem", borderRadius: 100, fontWeight: 500,
-              textDecoration: "none", fontSize: ".95rem", transition: "all .25s",
-            }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--sky)"; (e.currentTarget as HTMLElement).style.color = "var(--sky)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(14,165,233,.22)"; (e.currentTarget as HTMLElement).style.color = "rgba(15,23,42,.55)"; }}
+            <a href="#proses" style={{ color: "var(--violet)", border: "1.5px solid rgba(99,88,229,.25)", padding: "1rem 2rem", borderRadius: 100, fontWeight: 600, textDecoration: "none", fontSize: ".95rem", transition: "all .25s" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--violet)"; (e.currentTarget as HTMLElement).style.background = "rgba(99,88,229,.04)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(99,88,229,.25)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
             >Lihat Proses →</a>
           </div>
 
-          {/* Trust badges */}
-          <div style={{ display: "flex", gap: "1.5rem", marginTop: "3rem", flexWrap: "wrap", animation: "fadeUp .6s .4s ease both" }}>
+          {/* Trust row */}
+          <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap", animation: "fadeUp .6s .4s ease both" }}>
             {[
               { icon: "🏆", label: "BPOM Certified" },
-              { icon: "🧪", label: "Lab Tested" },
-              { icon: "⚡", label: "Proses Cepat" },
+              { icon: "🧪", label: "Lab Tested Daily" },
+              { icon: "⭐", label: "4.9 / 1200+ Ulasan" },
             ].map(b => (
               <div key={b.label} style={{ display: "flex", alignItems: "center", gap: ".4rem" }}>
-                <span style={{ fontSize: ".9rem" }}>{b.icon}</span>
-                <span style={{ color: "rgba(15,23,42,.4)", fontSize: ".78rem", fontWeight: 500, letterSpacing: ".06em" }}>{b.label}</span>
+                <span>{b.icon}</span>
+                <span style={{ color: "var(--muted)", fontSize: ".78rem", fontWeight: 500 }}>{b.label}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right — Galon visual */}
+        {/* RIGHT — hero visual */}
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", position: "relative" }}>
           {/* Ripple rings */}
           {[1,2,3].map(i => (
-            <div key={i} style={{
-              position: "absolute", borderRadius: "50%",
-              border: `1px solid rgba(14,165,233,${.12 / i})`,
-              width: `${180 + i * 90}px`, height: `${180 + i * 90}px`,
-              animation: `ripple ${2 + i}s ease-out infinite ${i * .6}s`,
-            }} />
+            <div key={i} style={{ position: "absolute", borderRadius: "50%", border: `1.5px solid rgba(99,88,229,${.1 / i})`, width: `${200 + i * 100}px`, height: `${200 + i * 100}px`, animation: `ripple ${2.5 + i * .7}s ease-out infinite ${i * .5}s` }} />
           ))}
 
-          {/* Main galon card */}
-          <div style={{
-            width: 280, height: 380, borderRadius: 24,
-            background: "linear-gradient(160deg, rgba(14,165,233,.07) 0%, rgba(3,105,161,.04) 100%)",
-            border: "1px solid rgba(14,165,233,.15)",
-            backdropFilter: "blur(10px)",
-            display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-            position: "relative", overflow: "hidden",
-            animation: "float 5s ease-in-out infinite",
-            boxShadow: "0 20px 60px rgba(14,165,233,.1), inset 0 1px 0 rgba(255,255,255,.8)",
-          }}>
-            {/* Water shimmer inside card */}
-            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "35%", background: "linear-gradient(to top, rgba(14,165,233,.08), transparent)", borderRadius: "0 0 24px 24px" }} />
-            <div style={{ position: "absolute", bottom: "32%", left: 0, right: 0, height: 1, background: "linear-gradient(90deg, transparent, rgba(56,189,248,.3), transparent)" }} />
-
-            {/* Galon icon big */}
-            <div style={{ fontSize: "7rem", marginBottom: "1rem", filter: "drop-shadow(0 8px 24px rgba(14,165,233,.3))", animation: "dropFall .8s .5s ease both" }}>💧</div>
-
-            {/* Price tag */}
-            <div style={{
-              background: "linear-gradient(135deg, var(--sky), var(--deep))",
-              borderRadius: 14, padding: "1rem 1.5rem", textAlign: "center",
-              boxShadow: "0 8px 24px rgba(14,165,233,.35)",
-            }}>
-              <div style={{ fontSize: ".7rem", fontWeight: 600, letterSpacing: ".15em", textTransform: "uppercase", opacity: .85, marginBottom: ".2rem", color: "#fff" }}>Harga Isi Ulang</div>
-              <div style={{ fontFamily: "Outfit, sans-serif", fontWeight: 900, fontSize: "2.4rem", letterSpacing: "-.04em", lineHeight: 1, color: "#fff" }}>Rp 6.000</div>
-              <div style={{ fontSize: ".75rem", opacity: .85, marginTop: ".3rem", color: "#fff" }}>per galon 20 liter</div>
-            </div>
+          {/* Main card */}
+          <div style={{ width: 300, height: 400, borderRadius: 28, background: "linear-gradient(160deg, rgba(99,88,229,.06) 0%, rgba(10,189,227,.04) 100%)", border: "1.5px solid rgba(99,88,229,.12)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", animation: "float 5s ease-in-out infinite", boxShadow: "0 24px 64px rgba(99,88,229,.1), inset 0 1px 0 rgba(255,255,255,.8)" }}>
 
             {/* Top shine */}
-            <div style={{ position: "absolute", top: 0, left: "20%", right: "20%", height: 1, background: "linear-gradient(90deg, transparent, rgba(14,165,233,.2), transparent)" }} />
+            <div style={{ position: "absolute", top: 0, left: "15%", right: "15%", height: 1, background: "linear-gradient(90deg,transparent,rgba(99,88,229,.3),transparent)" }} />
+            {/* Bottom water shimmer */}
+            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "30%", background: "linear-gradient(to top, rgba(10,189,227,.07), transparent)" }} />
+            <div style={{ position: "absolute", bottom: "28%", left: 0, right: 0, height: 1, background: "linear-gradient(90deg,transparent,rgba(10,189,227,.25),transparent)" }} />
+
+            {/* Drop icon */}
+            <div style={{ fontSize: "7rem", marginBottom: ".75rem", filter: "drop-shadow(0 8px 20px rgba(99,88,229,.2))", animation: "float 4s ease-in-out infinite .5s" }}>💧</div>
+
+            {/* Price pill */}
+            <div style={{ background: "var(--grad-main)", borderRadius: 18, padding: "1.1rem 2rem", textAlign: "center", boxShadow: "0 8px 28px rgba(99,88,229,.35)", position: "relative", zIndex: 1 }}>
+              <div style={{ fontSize: ".68rem", fontWeight: 600, color: "rgba(255,255,255,.75)", letterSpacing: ".14em", textTransform: "uppercase", marginBottom: ".2rem" }}>Harga Isi Ulang</div>
+              <div style={{ fontFamily: "Syne, sans-serif", fontWeight: 900, fontSize: "2.6rem", letterSpacing: "-.04em", lineHeight: 1, color: "#fff" }}>Rp 6.000</div>
+              <div style={{ fontSize: ".75rem", color: "rgba(255,255,255,.75)", marginTop: ".3rem" }}>per galon 20 liter</div>
+            </div>
           </div>
 
           {/* Floating chips */}
-          <div style={{ position: "absolute", top: "8%", right: "-2%", background: "#FFFFFF", border: "1px solid rgba(14,165,233,.15)", borderRadius: 12, padding: ".75rem 1rem", animation: "float 6s ease-in-out infinite 1s", boxShadow: "0 4px 20px rgba(14,165,233,.1)" }}>
+          <div style={{ position: "absolute", top: "6%", right: "0%", background: "#fff", border: "1.5px solid rgba(99,88,229,.12)", borderRadius: 14, padding: ".75rem 1.1rem", boxShadow: "0 8px 28px rgba(99,88,229,.1)", animation: "float 6s ease-in-out infinite 1s" }}>
             <div style={{ fontSize: ".65rem", color: "var(--muted)", marginBottom: ".2rem" }}>Pelanggan Aktif</div>
-            <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "var(--sky2)" }}>1.200+</div>
+            <div style={{ fontFamily: "Syne,sans-serif", fontWeight: 800, fontSize: "1.1rem", background: "var(--grad-main)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>1.200+</div>
           </div>
-          <div style={{ position: "absolute", bottom: "12%", left: "-4%", background: "#FFFFFF", border: "1px solid rgba(14,165,233,.15)", borderRadius: 12, padding: ".75rem 1rem", animation: "float 7s ease-in-out infinite .5s", boxShadow: "0 4px 20px rgba(14,165,233,.1)" }}>
-            <div style={{ fontSize: ".65rem", color: "var(--muted)", marginBottom: ".2rem" }}>Rating</div>
-            <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "var(--sky2)" }}>⭐ 4.9/5</div>
+          <div style={{ position: "absolute", bottom: "10%", left: "0%", background: "#fff", border: "1.5px solid rgba(10,189,227,.15)", borderRadius: 14, padding: ".75rem 1.1rem", boxShadow: "0 8px 28px rgba(10,189,227,.1)", animation: "float 7s ease-in-out infinite .5s" }}>
+            <div style={{ fontSize: ".65rem", color: "var(--muted)", marginBottom: ".2rem" }}>Buka Setiap Hari</div>
+            <div style={{ fontFamily: "Syne,sans-serif", fontWeight: 800, fontSize: "1rem", color: "var(--emerald)" }}>07.00 – 21.00</div>
           </div>
         </div>
       </div>
 
-      {/* Bottom wave divider */}
-      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 1 }}>
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style={{ width: "100%", height: 60, display: "block" }}>
-          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#F8FAFC" />
-        </svg>
+      {/* Stats bar */}
+      <div style={{ position: "relative", zIndex: 2, borderTop: "1px solid var(--border)", background: "rgba(255,255,255,.7)", backdropFilter: "blur(10px)" }}>
+        <div style={{ maxWidth: 1300, margin: "0 auto", padding: "0 5%", display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
+          {[
+            { n: "Rp 6.000", l: "per Galon 20L", grad: "var(--grad-main)" },
+            { n: "7 Tahap", l: "Proses Filtrasi", grad: "var(--grad-cool)" },
+            { n: "1.200+", l: "Pelanggan Aktif", grad: "var(--grad-royal)" },
+            { n: "4.9 ⭐", l: "Rating Kepuasan", grad: "var(--grad-warm)" },
+          ].map((s, i) => (
+            <div key={i} style={{ padding: "1.5rem 1.5rem", borderRight: i < 3 ? "1px solid var(--border)" : "none" }}>
+              <div style={{ fontFamily: "Syne,sans-serif", fontWeight: 900, fontSize: "1.6rem", letterSpacing: "-.04em", background: s.grad, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>{s.n}</div>
+              <div style={{ color: "var(--muted)", fontSize: ".75rem", marginTop: ".25rem", fontWeight: 500 }}>{s.l}</div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <style>{`
         @media(max-width:900px){
-          #home > div { grid-template-columns: 1fr !important; padding-top: 8rem !important; }
-          #home > div > div:last-child { display: none !important; }
+          #home > div:nth-child(2){grid-template-columns:1fr!important;padding-top:8rem!important}
+          #home > div:nth-child(2) > div:last-child{display:none!important}
+          #home > div:last-child > div{grid-template-columns:1fr 1fr!important}
         }
       `}</style>
     </section>
